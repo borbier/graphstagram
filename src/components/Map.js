@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { latLongFinder } from '../method/LatLongFinder'
 import { connect } from 'react-redux'
 import { Color } from './Element/Identity'
-import { updateMaker } from '../stores/Locations'
 
+// stateful compoene
 class Map extends React.Component {
   componentDidMount() {}
   render() {

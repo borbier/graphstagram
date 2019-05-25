@@ -5,35 +5,8 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { updateMaker } from './stores/Locations'
 import { LOCATION_DATAS, BTSLocationSet } from './assets/data'
-import { measure, measureTotal } from './method/MeasureDistance'
-
-const Container = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  z-index: 2;
-  width: 100%;
-  background: #3c3c3c94;
-  padding: 20px 0 12px;
-  height: 10vh;
-  ._rails-container {
-    ${'' /* border-left: 3px solid white; */};
-    max-width: 840px;
-    margin-left: 16px;
-  }
-  ._transit-tag {
-    color: #ffc800;
-    font-size: 19px;
-    font-weight: 700;
-    span {
-      margin-top: -2px;
-      display: inline-block;
-      font-size: 36px;
-    }
-  }
-`
+import { measureTotal } from './method/MeasureDistance'
+import { Container } from './styles/Container'
 
 const Describe = styled.div`
   position: absolute;
@@ -98,7 +71,9 @@ class App extends React.Component {
   handleClick(e) {
     this.props.dispatch(updateMaker(e))
   }
-  componentDidMount() {}
+  componentDidMount() {
+    // this.props.dispatch(updateMaker(LOCATION_DATAS[0]))
+  }
   render() {
     const BTS_MAP = Object.keys(BTSLocationSet.marker)
     const { collections } = this.props
@@ -170,4 +145,5 @@ function mapStateToProps(state) {
     collections: state.locations.marker
   }
 }
+
 export default connect(mapStateToProps)(App)
