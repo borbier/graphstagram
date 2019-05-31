@@ -94,7 +94,7 @@ const MapComponent = compose(
           <Marker
             key={index}
             position={{ lat: key.lat, lng: key.lng }}
-            onClick={() => alert(key.name)}
+            // onClick={() => alert(key.name)}
             icon={{
               path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
               fillColor: '#FFFFFF',
@@ -106,7 +106,8 @@ const MapComponent = compose(
           >
             <InfoWindow>
               <div className="_description">
-                <MapText>{fromLocation}</MapText>
+                {/* <MapText>{fromLocation}</MapText> */}
+                <MapText>{key.name}</MapText>
               </div>
             </InfoWindow>
           </Marker>
