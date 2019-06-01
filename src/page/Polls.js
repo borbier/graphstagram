@@ -25,7 +25,7 @@ function ToggleButton(props) {
         setToggleState(toggleState === "off" ? "on" : "off")
     }
 
-    return <Button type={toggleState === "on" ? "primary" : ""} onClick={toggle}>Some wording here</Button>
+    return <Button type={toggleState === "on" ? "primary" : ""} onClick={toggle}>{props.text}</Button>
 }
 
 const Container = styled.div`
@@ -38,7 +38,7 @@ const Polls = () => (
     <Header />
     {/* <div>Main</div> */}
     <Container>
-    <ToggleButton />
+    <ToggleButton text="Condominium"/>
     <ButtonHatch />
     </Container>
 
