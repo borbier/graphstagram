@@ -188,7 +188,7 @@ class Main extends React.Component {
             </MDBRow>
           </MasonContainer>
           <div>
-            <BackButton link="/" />
+            <BackButton link="/polls" />
             <ButtonHatch />
           </div>
           <SpaceLess />

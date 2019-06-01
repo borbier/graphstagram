@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import BackButton from '../components/Button/Back'
 import {
   Button,
   Dropdown,
@@ -171,7 +172,10 @@ class Polls extends React.Component {
             }}
           />
           <Divider />
-          <ButtonHatch />
+          <div>
+            <BackButton link="/" />
+            <ButtonHatch />
+          </div>
         </div>
       </Container>
     )
