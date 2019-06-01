@@ -1,6 +1,7 @@
 import React from "react"
 import ArchitectLayout from "../components/ArchitectLayout"
-import { Divider, Menu, Dropdown, Button, Icon, message, DatePicker, Table } from "antd"
+import { Divider, Menu, Dropdown, Button, Icon, message, DatePicker, Table, Col, Row } from "antd"
+import { Doughnut } from "react-chartjs-2"
 
 const contractData = [
   {
@@ -21,6 +22,41 @@ const contractCol = [
 	{ title: 'Start Date', dataIndex: 'start', key: 'start' },
 	{ title: 'Issue', dataIndex: 'issue', key: 'issue' },
 ];
+
+const designerData = [
+	{
+		key: '1',
+		name: 'Josh',
+		slotA: 'TH001',
+		slotB: 'SG003',
+		slotC: 'UK004'
+	}
+]
+
+const designerCol = [
+	{ title: 'Designer', dataIndex: 'name', key: 'name' },
+	{ title: 'SlotA', dataIndex: 'slotA', key: 'slotA' },
+	{ title: 'SlotB', dataIndex: 'slotB', key: 'slotB' },
+	{ title: 'SlotC', dataIndex: 'slotC', key: 'slotC' },
+]
+
+const studioWorkload = {
+	labels: [
+		'Studio 1 Workload',
+		'All Project'
+	],
+	datasets: [{
+		data: [50, 100],
+		backgroundColor: [
+		'#36A2EB',
+		'#FFCE56'
+		],
+		hoverBackgroundColor: [
+		'#36A2EB',
+		'#FFCE56'
+		]
+	}]
+};
 
 function onChangeDate(date, dateString) {
   console.log(date, dateString);
@@ -50,6 +86,8 @@ const studioDropdown = (
 	</Menu>
 );
 
+const DemoBox = props => <p className={`height-${props.value}`}>{props.children}</p>;
+
 const Project = () => (
 	<ArchitectLayout children={
 		<div>
@@ -66,7 +104,16 @@ const Project = () => (
 			<Dropdown overlay={studioDropdown}>
       	<Button>Studio  <Icon type="down" /></Button>
 			</Dropdown>
-			
+			<Row type="flex" justify="center" align="top">
+      <Col span={12}>
+        <Table dataSource={designerData} columns={designerCol} />
+      </Col>
+      <Col span={12}>
+					<Doughnut data={studioWorkload} />
+      </Col>
+    </Row>
+
+
 		</div>
 	} />
 )
