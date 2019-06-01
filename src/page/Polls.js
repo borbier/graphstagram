@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import BackButton from '../components/Button/Back'
+import background from '../assets/image/graph_background.png'
 import {
   Button,
   Dropdown,
@@ -72,6 +73,7 @@ function ToggleButton(props) {
 
 const Container = styled.div`
   text-align: center;
+  position: relative;
   display: flex;
   margin: 20px 0;
   height: 100vh;
@@ -126,6 +128,29 @@ class Polls extends React.Component {
   render() {
     return (
       <Container>
+        <img
+          src={background}
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: '-40px',
+            height: '233px',
+            opacity: '0.65'
+          }}
+          alt=""
+        />
+        <img
+          src={background}
+          style={{
+            position: 'absolute',
+            left: 0,
+            bottom: '-40px',
+            height: '233px',
+            opacity: '0.4',
+            transform: 'scale(-1)'
+          }}
+          alt=""
+        />
         <div className="_container">
           <img
             src={Logo}
