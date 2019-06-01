@@ -1,7 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react'
 import { Button, Radio, Icon } from 'antd'
 import { withRouter } from 'react-router-dom'
+import Header from '../components/Header'
+import styled from 'styled-components'
 
 const ButtonHatch = withRouter(({ history }) => (
     <Button
@@ -17,10 +18,31 @@ const ButtonHatch = withRouter(({ history }) => (
     </Button>
   ))
 
-const Polls = () => (
-    <div>
-    <ButtonHatch />
-    </div>
-)
+function ToggleButton(props) {
+    const [toggleState, setToggleState] = useState("off")
 
+    function toggle() {
+        setToggleState(toggleState === "off" ? "on" : "off")
+    }
+
+    return <Button type={toggleState === "on" ? "primary" : ""} onClick={toggle}>Some wording here</Button>
+}
+
+const Container = styled.div`
+  text-align: center;
+  margin: 20px 0;
+`
+
+const Polls = () => (
+  <div>
+    <Header />
+    {/* <div>Main</div> */}
+    <Container>
+    <ToggleButton />
+    <ButtonHatch />
+    </Container>
+
+    {/* <Masonry style={{ margin: 'auto' }} /> */}
+  </div>
+)
 export default Polls
