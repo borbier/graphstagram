@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Dropdown, Divider, Menu, Input, Col, Row } from 'antd'
+import { Button, Dropdown, Divider, Menu, Input, Col, Row, message } from 'antd'
 import { withRouter } from 'react-router-dom'
 import Header from '../components/Header'
 import styled from 'styled-components'
@@ -73,8 +73,13 @@ const Container = styled.div`
   text-align: center;
   margin: 20px 0;
 `
+
+const choiceSelect = ({ key }) => {
+    message.info(`Click on ${key}`)
+}
+
 const choices = (props) => (
-    <Menu>{props.map(choice => <Menu.Item>{choice}</Menu.Item>)}</Menu>
+    <Menu onClick={choiceSelect}>{props.map(choice => <Menu.Item>{choice}</Menu.Item>)}</Menu>
 )
 
 const Questionnaire = (props) => (
@@ -97,6 +102,7 @@ const Polls = () => (
                     <Questionnaire choices={question[3].choices} topic={question[3].topic} />
                 <Divider>In case of no choice that fit your solution</Divider>
                     <Input placeholder="Put your word here." />
+                <Divider />
                 <ButtonHatch />
             </Col>
             <Col xs={2} sm={4} md={6} lg={8} xl={10}></Col>
