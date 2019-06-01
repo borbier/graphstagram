@@ -4,6 +4,7 @@ import { Layout } from 'antd'
 import Exterior from './page/Exterior'
 import Interior from './page/Interior'
 import Summary from './page/Summary'
+import Polls from './page/Polls'
 import ContentX from './page/Content'
 import Intro from './page/Intro'
 import HeaderX from './components/Header'
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/" component={Intro} />
             <Route path="/exterior" component={Exterior} />
             <Route path="/interior" component={Interior} />
+            <Route path="/polls" component={Polls} />
             <Route path="/content" component={ContentX} />
             <Route path="/summary" component={Summary} />
           </Content>

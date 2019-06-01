@@ -105,7 +105,18 @@ const Row = ({ label, text }) => (
 const Intro = () => (
   <Whole>
     <Space size="72" />
-    <h3>SUMMARY</h3>
+    <div style={{ marginBottom: '32px' }}>
+      <span
+        style={{
+          fontSize: '32px',
+          fontWeight: '600',
+          border: '4px solid',
+          padding: '8px'
+        }}
+      >
+        SHEET SUMMARY
+      </span>
+    </div>
     <QuationContainer>
       <h4>Office A เสนอ Owner B</h4>
       <Row label="ประเภทโครงการ : " text="โรงเเรม Low rise" />
