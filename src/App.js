@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import { Layout } from 'antd'
 import Main from './page/Main'
 import Polls from './page/Polls'
+import Architect from './page/Architect'
 import ContentX from './page/Content'
 import Intro from './page/Intro'
 import HeaderX from './components/Header'
@@ -18,6 +19,7 @@ function App() {
             <Route path="/polls" component={Polls} />
             <Route path="/main" component={Main} />
             <Route path="/content" component={ContentX} />
+            <Route path="/dashboard" component={Architect} />
           </Content>
         </Layout>
       </div>
