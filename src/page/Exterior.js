@@ -1,0 +1,201 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import logo from '../assets/image/logo.png'
+import { Button, Radio, Icon } from 'antd'
+import { withRouter } from 'react-router-dom'
+import Header from '../components/Header'
+import styled from 'styled-components'
+import { MDBRow } from 'mdbreact'
+import Clicker from '../components/Clicker'
+import BackButton from '../components/Button/Back'
+import IMG_1 from '../assets/reference/exterior/1.png'
+import IMG_2 from '../assets/reference/exterior/2.png'
+import IMG_3 from '../assets/reference/exterior/3.png'
+import IMG_4 from '../assets/reference/exterior/4.png'
+import IMG_5 from '../assets/reference/exterior/5.png'
+import IMG_6 from '../assets/reference/exterior/6.png'
+import IMG_7 from '../assets/reference/exterior/7.png'
+import IMG_8 from '../assets/reference/exterior/8.png'
+import IMG_9 from '../assets/reference/exterior/9.png'
+import IMG_10 from '../assets/reference/exterior/10.png'
+import IMG_11 from '../assets/reference/exterior/11.png'
+import IMG_12 from '../assets/reference/exterior/12.png'
+import IMG_13 from '../assets/reference/exterior/13.png'
+import IMG_14 from '../assets/reference/exterior/14.png'
+import IMG_15 from '../assets/reference/exterior/15.png'
+import IMG_16 from '../assets/reference/exterior/16.png'
+import {
+  Input,
+  Col,
+  Row,
+  Select,
+  InputNumber,
+  DatePicker,
+  AutoComplete,
+  Cascader
+} from 'antd'
+
+const InputGroup = Input.Group
+const { Option } = Select
+
+const Container = styled.div`
+  text-align: center;
+  margin: 20px 0;
+`
+const Space = styled.div`
+  margin: 40px 0;
+`
+const SpaceLess = styled.div`
+  margin: 20px 0;
+`
+const MasonContainer = styled.div`
+  width: 80vw;
+  margin: auto;
+  .masonry-with-columns {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-height: 1000px;
+  }
+  .masonry-with-columns div {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    background: #00997b;
+    color: white;
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+  ._masonry {
+    position: relative;
+    img._checked {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+`
+const findIMg = index => {
+  switch (index) {
+    case 1:
+      return IMG_1
+    case 2:
+      return IMG_2
+    case 3:
+      return IMG_3
+    case 4:
+      return IMG_4
+    case 5:
+      return IMG_5
+    case 6:
+      return IMG_6
+    case 7:
+      return IMG_7
+    case 8:
+      return IMG_8
+    case 9:
+      return IMG_9
+    case 10:
+      return IMG_10
+    case 11:
+      return IMG_11
+    case 12:
+      return IMG_12
+    case 13:
+      return IMG_13
+    case 14:
+      return IMG_14
+    case 15:
+      return IMG_15
+    case 16:
+      return IMG_16
+    default:
+      return IMG_9
+  }
+}
+
+const ButtonHatch = withRouter(({ history }) => (
+  <Button
+    type="primary"
+    shape="round"
+    size="large"
+    style={{ minWidth: '200px' }}
+    onClick={() => {
+      history.push('/interior')
+    }}
+  >
+    Next | Interior
+  </Button>
+))
+
+class Main extends React.Component {
+  constructor() {
+    super()
+    this.MasonryRef = React.createRef()
+  }
+
+  componentDidMount() {
+    this.arrangeMasonry()
+  }
+
+  arrangeMasonry = () => {
+    const numCols = 3
+    const colHeights = Array(numCols).fill(0)
+    const container = ReactDOM.findDOMNode(this.MasonryRef.current)
+
+    Array.from(container.children).forEach((child, i) => {
+      const order = i % numCols
+      child.style.order = order
+      colHeights[order] += parseFloat(child.clientHeight)
+    })
+    container.style.height = Math.max(...colHeights) + 'px'
+  }
+  render() {
+    const listSets = [180, 160, 90, 120, 200, 240, 110, 150, 160, 180, 160, 90]
+    return (
+      <div>
+        {/* <Header /> */}
+        <Container>
+          {/* <InputGroup compact>
+            <Select defaultValue="Option1">
+              <Option value="Option1">Option1</Option>
+              <Option value="Option2">Option2</Option>
+            </Select>
+            <Input style={{ width: '50%' }} defaultValue="input content" />
+            <InputNumber />
+          </InputGroup>
+          <Space /> */}
+          <MasonContainer>
+            <MDBRow className="masonry-with-columns" ref={this.MasonryRef}>
+              {listSets.map((item, index) => {
+                let cs = 'null'
+                return <Clicker item={item} background={findIMg(index)} />
+              })}
+            </MDBRow>
+          </MasonContainer>
+          <div>
+            <BackButton link="/" />
+            <ButtonHatch />
+          </div>
+          <SpaceLess />
+        </Container>
+      </div>
+    )
+  }
+}
+
+export default Main

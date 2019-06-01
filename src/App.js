@@ -1,7 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import { Layout } from 'antd'
-import Main from './page/Main'
+import Exterior from './page/Exterior'
+import Interior from './page/Interior'
+import Summary from './page/Summary'
 import ContentX from './page/Content'
 import Intro from './page/Intro'
 import HeaderX from './components/Header'
@@ -14,8 +16,10 @@ function App() {
         <Layout>
           <Content>
             <Route exact path="/" component={Intro} />
-            <Route path="/main" component={Main} />
+            <Route path="/exterior" component={Exterior} />
+            <Route path="/interior" component={Interior} />
             <Route path="/content" component={ContentX} />
+            <Route path="/summary" component={Summary} />
           </Content>
         </Layout>
       </div>

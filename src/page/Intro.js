@@ -27,7 +27,7 @@ const ButtonHatch = withRouter(({ history }) => (
     icon="search"
     size="large"
     onClick={() => {
-      history.push('/main')
+      history.push('/exterior')
     }}
   >
     Search
