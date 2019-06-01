@@ -7,6 +7,8 @@ import Summary from './page/Summary'
 import Polls from './page/Polls'
 import Dashboard from './page/Dashboard'
 import Project from './page/Project'
+import Quotation from './page/Quotation'
+import TimeShift from './page/TimeShift'
 import ContentX from './page/Content'
 import Intro from './page/Intro'
 import HeaderX from './components/Header'
@@ -26,6 +28,8 @@ function App() {
             <Route path="/summary" component={Summary} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/projects" component={Project} />
+            <Route path="/quotation" component={Quotation} />
+            <Route path="/timeshift" component={TimeShift} />
           </Content>
         </Layout>
       </div>

@@ -86,8 +86,6 @@ const studioDropdown = (
 	</Menu>
 );
 
-const DemoBox = props => <p className={`height-${props.value}`}>{props.children}</p>;
-
 const Project = () => (
 	<ArchitectLayout children={
 		<div>
@@ -105,13 +103,13 @@ const Project = () => (
       	<Button>Studio  <Icon type="down" /></Button>
 			</Dropdown>
 			<Row type="flex" justify="center" align="top">
-      <Col span={12}>
-        <Table dataSource={designerData} columns={designerCol} />
-      </Col>
-      <Col span={12}>
+      	<Col span={12}>
+        	<Table dataSource={designerData} columns={designerCol} />
+      	</Col>
+      	<Col span={12}>
 					<Doughnut data={studioWorkload} />
-      </Col>
-    </Row>
+      	</Col>
+    	</Row>
 
 
 		</div>
