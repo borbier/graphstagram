@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import ArchitectLayout from '../components/ArchitectLayout'
 import {
   Divider,
@@ -62,6 +63,9 @@ const studioWorkload = {
   ]
 }
 
+const Space = styled.div`
+  height: 28px;
+`
 function onChangeDate(date, dateString) {
   console.log(date, dateString)
 }
@@ -104,6 +108,8 @@ const Project = () => (
           </Button>
         </Dropdown>
         <DatePicker onChange={onChangeDate} />
+        <Button style={{float: 'right'}} type="danger">Get Help!</Button>
+        <Space />
         <Table dataSource={contractData} columns={contractCol} />;
         <Divider />
         <h3>Studio Workload</h3>

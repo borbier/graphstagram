@@ -3,10 +3,24 @@ import styled from 'styled-components'
 import ICON_NULL from '../assets/image/icon/icon_null.png'
 import ICON_CHECKED from '../assets/image/icon/icon_checked.png'
 
+const hotelName = [
+  'Transquilty Base Hotel & Casino',
+  'Hotel California',
+  'Heartbreak Hotel',
+  'Hotel Transynvannia',
+  'Roosevelt',
+  'The Hotel Majestic',
+  'Hotel St. George'
+]
+
 const Mason = styled.div`
   &._masonry {
   position: relative;
   cursor: pointer;
+`
+
+const Description = styled.div`
+  width: 100%;
 `
 
 const IMageClicker = styled.img`
@@ -19,6 +33,10 @@ const IMageClicker = styled.img`
   }
 `
 
+function randomDescription(nameset, arrayLength) {
+  let index = Math.floor(Math.random() * Math.floor(arrayLength))
+  return nameset[index]
+}
 class Clicker extends React.Component {
   state = {
     check: false
@@ -43,6 +61,9 @@ class Clicker extends React.Component {
           }
         }}
       >
+        <Description>
+          <h6>{randomDescription(hotelName, 5)}</h6>
+        </Description>
         <IMageClicker
           className="_checked"
           src={this.state.check ? ICON_CHECKED : ICON_NULL}
