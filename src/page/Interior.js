@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import logo from '../assets/image/logo.png'
-import { Button, Radio, Icon } from 'antd'
+import { Button, Radio, Icon, Divider } from 'antd'
 import { withRouter } from 'react-router-dom'
 import Header from '../components/Header'
 import styled from 'styled-components'
@@ -41,10 +41,9 @@ const { Option } = Select
 const Container = styled.div`
   text-align: center;
   margin: 20px 0;
+  min-height: 100vh;
 `
-const Space = styled.div`
-  margin: 40px 0;
-`
+const Space = ({ height = 40 }) => <div style={{ margin: `${height}px 0` }} />
 const SpaceLess = styled.div`
   margin: 20px 0;
 `
@@ -64,7 +63,7 @@ const MasonContainer = styled.div`
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    max-height: 1000px;
+    max-height: 600px;
   }
   .masonry-with-columns div {
     -webkit-box-flex: 1;
@@ -169,6 +168,11 @@ class Main extends React.Component {
     return (
       <div>
         <Container>
+          <Divider>
+            <span style={{ fontSize: '24px' }}>
+              Select favourite interior schematic.
+            </span>
+          </Divider>
           <MasonContainer>
             <MDBRow className="masonry-with-columns" ref={this.MasonryRef}>
               {listSets.map((item, index) => {
@@ -177,6 +181,7 @@ class Main extends React.Component {
               })}
             </MDBRow>
           </MasonContainer>
+          <Space height="10" />
           <div>
             <BackButton link="/exterior" />
             <ButtonHatch />
