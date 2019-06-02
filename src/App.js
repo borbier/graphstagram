@@ -10,6 +10,7 @@ import Project from './page/Project'
 import Quotation from './page/Quotation'
 import TimeShift from './page/TimeShift'
 import ContentX from './page/Content'
+import Tracking from './page/Tracking'
 import Intro from './page/Intro'
 import HeaderX from './components/Header'
 const { Header, Footer, Sider, Content } = Layout
@@ -26,6 +27,7 @@ function App() {
             <Route path="/polls" component={Polls} />
             <Route path="/content" component={ContentX} />
             <Route path="/summary" component={Summary} />
+            <Route path="/tracking" component={Tracking} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/projects" component={Project} />
             <Route path="/quotation" component={Quotation} />

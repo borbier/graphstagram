@@ -150,7 +150,7 @@ const Intro = () => (
           padding: '8px'
         }}
       >
-        SHEET SUMMARY
+        PROJECT TRACKING
       </span>
     </div>
     <QuationContainer>
@@ -161,34 +161,12 @@ const Intro = () => (
       <Row label="งบประมาณ : " text="200 ล้านบาท" />
       <Row label="อื่นๆ : " text="ขอหรูๆ ..." />
       <Space />
-      <h4>Mood & Tone</h4>
-      <MoodList>
-        <div className="_split">
-          <div className="_small">Exterior design</div>
-          <MasonList genre="exterior" lists={[80, 44, 60, 100, 120]} />
-        </div>
-        <div className="_spanner" />
-        <div className="_split">
-          <div className="_small">Interior design</div>
-          <MasonList
-            genre="interior"
-            lists={[90, 80, 44, 60, 100, 90, 80, 54, 60, 100]}
-          />
-        </div>
-      </MoodList>
     </QuationContainer>
     <Space size="40" />
     <Flexer>
-      <BackButton link="/interior" />
-      <CButton text="Print" linkTo="/" icon="printer" />
-      <CButton text="Email" linkTo="/" icon="mail" />
-      <CButton text="Share" linkTo="/" icon="share-alt" />
       <HomeButton />
     </Flexer>
     <Space size="54" />
-    <FloatingArea>
-      <TrackButton />
-    </FloatingArea>
   </Whole>
 )
 export default Intro

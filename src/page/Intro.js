@@ -9,15 +9,6 @@ import { Button, Input, Divider, Row, Col } from 'antd'
 import { withRouter } from 'react-router-dom'
 import background from '../assets/image/graph_background.png'
 
-const Whole = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: #efefef;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
 const FountIcon = styled.h1`
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;

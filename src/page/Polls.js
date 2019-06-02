@@ -77,6 +77,7 @@ const Container = styled.div`
   display: flex;
   margin: 20px 0;
   height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   flex-direction: column;
   align-items: center;
