@@ -1,6 +1,6 @@
 import React from "react"
 import ArchitectLayout from "../components/ArchitectLayout"
-import { Divider, Table, Input } from "antd"
+import { Divider, Table, Input, Row, Col } from "antd"
 
 const manHourData = [
   {
@@ -47,6 +47,20 @@ const TimeShift = () => (
 			<h1>Timeshift</h1>
 			<Input placeholder="Employee" />
 			<Divider />
+			<h2>John Travolta</h2>
+			<Row type="flex" justify="left" align="top">
+      	<Col span={6}>
+        	<h3>Studio</h3><br/><h5>Aurora 3</h5>
+      	</Col>
+      	<Col span={6}>
+					<h3>Completed works</h3><br/><h5>14</h5>
+				</Col>
+				<Col span={6}>
+					<h3>Work Since</h3><br/><h5>2015</h5>
+				</Col>
+    	</Row>
+			<Divider />
+			<h2>Man-hour in current week</h2>
 			<Table dataSource={manHourData} columns={manHourCol} />
 		</div>
 	} />
