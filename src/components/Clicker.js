@@ -9,6 +9,11 @@ const Mason = styled.div`
   cursor: pointer;
 `
 
+const Description = styled.div`
+  background-color: #FFFFFF;
+  width: 100%;
+`
+
 const IMageClicker = styled.img`
   &._checked {
     position: absolute;
@@ -43,6 +48,9 @@ class Clicker extends React.Component {
           }
         }}
       >
+        <Description>
+          <h6>Transquilty Base Hotel & Casino</h6>
+        </Description>
         <IMageClicker
           className="_checked"
           src={this.state.check ? ICON_CHECKED : ICON_NULL}
