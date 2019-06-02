@@ -58,7 +58,7 @@ const Flexer = styled.div`
 
 const ButtonHatch = withRouter(({ history, current }) => {
   const text = current === 'designer' ? 'Ready to Organize' : 'Ready to Design'
-  const link = current === 'designer' ? '/dashboard' : '/polls'
+  const link = current === 'designer' ? '/projects' : '/polls'
   return (
     <Button
       type="primary"
